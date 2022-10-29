@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.umarket.view.MainItemFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@+id/action_mainFragment_to_detailFragment"
+            app:destination="@id/nav_sellbag" />
+        <action
+            android:id="@+id/action_mainFragment_to_nav_profile"
+            app:destination="@id/nav_profile" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_sellbag"
+        android:name="com.example.umarket.view.SellItemFragment"
+        android:label="activity_main"
+        tools:layout="@layout/fragment_item_sell_main" >
+        <action
+            android:id="@+id/action_nav_sellbag_to_mainFragment"
+            app:destination="@id/nav_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.umarket.view.ProfileFragment"
+        android:label="activity_main"
+        tools:layout="@layout/profile">
+        <action
+            android:id="@+id/action_mainFragment_to_detailFragment"
+            app:destination="@id/nav_sellbag" />
+        <action
+            android:id="@+id/action_nav_profile_to_mainFragment"
+            app:destination="@id/nav_home" />
+    </fragment>
+</navigation>
